@@ -95,8 +95,8 @@ if(BUILD_DEMOS)
         SET(DEMO_SOURCES ./demos/false_sharing_demo.cpp)
         ADD_EXECUTABLE(false_sharing_demo ${DEMO_SOURCES})
 
-        SET(DEMO_SOURCES ./demos/assync_demo.cpp)
-        ADD_EXECUTABLE(assync_demo ${DEMO_SOURCES})
+        SET(DEMO_SOURCES ./demos/async_demo.cpp)
+        ADD_EXECUTABLE(async_demo ${DEMO_SOURCES})
 
         SET(DEMO_SOURCES ./demos/mutex_demo.cpp)
         ADD_EXECUTABLE(mutex_demo ${DEMO_SOURCES})
