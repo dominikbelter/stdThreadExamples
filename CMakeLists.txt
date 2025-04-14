@@ -8,7 +8,7 @@ SET(CMAKE_BUILD_TYPE "Release" CACHE PATH "Current build configuration")
 # Example Project configuration
 PROJECT(THREADS)
 
-SET(CXX_STANDARD "-std=c++20")
+SET(CXX_STANDARD "-std=c++20 -O3")
 SET(CMAKE_CXX_FLAGS "${CXX_STANDARD} -O3 -Wall -Wextra -Wshadow -Wconversion -pthread -fopenmp")
 
 # Folders
