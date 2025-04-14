@@ -8,7 +8,7 @@ SET(CMAKE_BUILD_TYPE "Release" CACHE PATH "Current build configuration")
 # Example Project configuration
 PROJECT(THREADS)
 
-SET(CXX_STANDARD "-std=c++17")
+SET(CXX_STANDARD "-std=c++20")
 SET(CMAKE_CXX_FLAGS "${CXX_STANDARD} -O3 -Wall -Wextra -Wshadow -Wconversion -pthread -fopenmp")
 
 # Folders
@@ -29,6 +29,8 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 add_definitions(-Wno-deprecated -DEIGEN_DONT_VECTORIZE -DEIGEN_DISABLE_UNALIGNED_ARRAY_ASSERT)
+
+find_package(TBB REQUIRED)
 
 # Executable output directory
 SET(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build/bin${OUTPUT_DIRECTORY_POSTFIX} CACHE PATH "Executable output directory")
@@ -100,4 +102,8 @@ if(BUILD_DEMOS)
 
         SET(DEMO_SOURCES ./demos/mutex_demo.cpp)
         ADD_EXECUTABLE(mutex_demo ${DEMO_SOURCES})
+
+        SET(DEMO_SOURCES ./demos/execution_demo.cpp)
+        ADD_EXECUTABLE(execution_demo ${DEMO_SOURCES})
+        target_link_libraries(execution_demo PRIVATE TBB::tbb)
 endif(BUILD_DEMOS)

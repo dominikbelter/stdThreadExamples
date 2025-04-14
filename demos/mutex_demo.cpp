@@ -2,6 +2,7 @@
 #include <iostream>
 #include <chrono>
 #include <random>
+#include <thread>
 #include "Defs/eigen3.h"
 
 class Robot{

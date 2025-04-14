@@ -9,6 +9,7 @@ int main()
         std::cout << "async_demo - asynchronous demo\n";
         std::cout << "false_sharing_demo - false sharing demo\n";
         std::cout << "mutex_demo - mutex demo\n";
+        std::cout << "execution_demo - execution demo\n";
     }
     catch (const std::exception& ex) {
         std::cerr << ex.what() << std::endl;
