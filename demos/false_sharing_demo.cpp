@@ -4,7 +4,7 @@
 #include "Defs/eigen3.h"
 
 ///create 1000x1000 matrix filled with random numbers
-Eigen::MatrixXd matGlob = Eigen::MatrixXd::Random(1000,1000);
+Eigen::MatrixXd matGlob = Eigen::MatrixXd::Random(10000,10000);
 
 /// find max value in the matrix
 double findMax(const Eigen::MatrixXd& mat) {

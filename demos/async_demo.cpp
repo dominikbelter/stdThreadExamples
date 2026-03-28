@@ -6,7 +6,7 @@
 
 typedef std::array<std::array<double, 10000>, 10000> Array2D;
 
-///create 1000x1000 matrix filled with random numbers
+///create 10000x10000 matrix filled with random numbers
 Array2D matGlob;
 
 /// fill in with random numbers

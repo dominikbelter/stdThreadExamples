@@ -6,7 +6,7 @@
 
 typedef std::array<std::array<double, 10000>, 10000> Array2D;
 
-///create 1000x1000 matrix filled with random numbers
+///create 10000x10000 matrix filled with random numbers
 Array2D matGlob;
 
 /// fill in with random numbers
@@ -33,7 +33,7 @@ double findMax(const Array2D& mat) {
     return max;
 }
 
-/// find min value in the matrix
+/// find max value in the matrix
 void findMaxArea(const Array2D& mat, size_t startCol, size_t endCol, size_t startRow, size_t endRow, double &max) {
     max = std::numeric_limits<double>::min();
     for (size_t col=startCol;col<endCol;col++){
@@ -60,7 +60,7 @@ int main()
         // measure time
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         // display output
-        std::cout << "Time difference when function is called = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << "[ms]" << std::endl;
+        std::cout << "Time difference when function is called = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[us]" << std::endl;
 
         /// now we run two threads
         // measure time
@@ -79,7 +79,7 @@ int main()
         // measure time
         end = std::chrono::steady_clock::now();
         // display output
-        std::cout << "Time difference with threads = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << "[ms]" << std::endl;
+        std::cout << "Time difference with threads = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[us]" << std::endl;
     }
     catch (const std::exception& ex) {
         std::cerr << ex.what() << std::endl;

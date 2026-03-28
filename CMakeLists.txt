@@ -91,19 +91,23 @@ if(BUILD_DEMOS)
         ADD_EXECUTABLE(thread ${DEMO_SOURCES})
         TARGET_LINK_LIBRARIES(thread)
 
-        SET(DEMO_SOURCES ./demos/threads_demo.cpp)
-        ADD_EXECUTABLE(threads_demo ${DEMO_SOURCES})
+        SET(DEMO_THREADS_SOURCES ./demos/threads_demo.cpp)
+        ADD_EXECUTABLE(threads_demo ${DEMO_THREADS_SOURCES})
 
-        SET(DEMO_SOURCES ./demos/false_sharing_demo.cpp)
-        ADD_EXECUTABLE(false_sharing_demo ${DEMO_SOURCES})
+        SET(DEMO_FS_SOURCES ./demos/false_sharing_demo.cpp)
+        ADD_EXECUTABLE(false_sharing_demo ${DEMO_FS_SOURCES})
 
-        SET(DEMO_SOURCES ./demos/async_demo.cpp)
-        ADD_EXECUTABLE(async_demo ${DEMO_SOURCES})
+        SET(DEMO_ASYNC_SOURCES ./demos/async_demo.cpp)
+        ADD_EXECUTABLE(async_demo ${DEMO_ASYNC_SOURCES})
 
-        SET(DEMO_SOURCES ./demos/mutex_demo.cpp)
-        ADD_EXECUTABLE(mutex_demo ${DEMO_SOURCES})
+        SET(DEMO_MUTEX_SOURCES ./demos/mutex_demo.cpp)
+        ADD_EXECUTABLE(mutex_demo ${DEMO_MUTEX_SOURCES})
 
-        SET(DEMO_SOURCES ./demos/execution_demo.cpp)
-        ADD_EXECUTABLE(execution_demo ${DEMO_SOURCES})
+        SET(DEMO_EXEC_SOURCES ./demos/execution_demo.cpp)
+        ADD_EXECUTABLE(execution_demo ${DEMO_EXEC_SOURCES})
         target_link_libraries(execution_demo PRIVATE TBB::tbb)
+
+        SET(DEMO_LAMBDA_SOURCES ./demos/lambda_demo.cpp)
+        ADD_EXECUTABLE(lambda_demo ${DEMO_LAMBDA_SOURCES})
+        # target_link_libraries(lambda_demo)
 endif(BUILD_DEMOS)

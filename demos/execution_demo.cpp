@@ -93,7 +93,7 @@ int main()
         // measure time
         begin = std::chrono::steady_clock::now();
         // Set number of threads
-        size_t num_threads = 16;
+        size_t num_threads = 21;
 
         std::vector<std::thread> threads;
         size_t chunk_size = data.size() / size_t(num_threads);
